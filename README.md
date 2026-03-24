@@ -49,7 +49,7 @@ This project demonstrates strong understanding of **Data Structures, Algorithms,
 ### 🔹 Compress a File
 
 ```bash
-java HuffCompression c text.txt text.tex.thuff
+java -cp core HuffCompression c text.txt text.tex.thuff
 ```
 
 * `c` → Compress mode
@@ -61,7 +61,7 @@ java HuffCompression c text.txt text.tex.thuff
 ### 🔹 Decompress a File
 
 ```bash
-java HuffCompression d text.text.huff output.txt
+java -cp core HuffCompression d text.text.huff output.txt
 ```
 
 * `d` → Decompress mode
@@ -91,7 +91,7 @@ java HuffCompression d text.text.huff output.txt
 2. Navigate to project folder
 
    ```bash
-   cd File-Compression-Tool
+   cd File-Compression-Tool/core
    ```
 
 3. Compile:
@@ -103,7 +103,11 @@ java HuffCompression d text.text.huff output.txt
 4. Run (CLI mode):
 
    ```bash
-   java HuffCompression c input.txt output.text.huff
+   --To Compress
+   java -cp core HuffCompression c input.txt output.text.huff
+
+   --To Decompress
+   java -cp core HuffCompression d input.txt.huff output.text
    ```
 
 ---
@@ -145,7 +149,7 @@ java HuffCompression d text.text.huff output.txt
 
 ## 👤 Author
 
-**Ashy**
+**Aashita Bansal**
 B.Tech CSE | Java Backend Developer | DSA Enthusiast
 
 ---
