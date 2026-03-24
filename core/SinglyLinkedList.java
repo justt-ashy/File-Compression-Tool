@@ -1,31 +1,43 @@
-package com.example.File_compression_tool.huffman;
+// import java.util.*;
+public class SinglyLinkedList<T> {
+    private LLNode<T> head = null;
+    private LLNode<T> tail = null;
+    private int size = 0;
 
-//This is a file which provides fast insertion at end and removal both from start and end.
-//<T>  means we can store any type of data type
-public class SinglyLinkedList<T>{
-    private LLNode head = null;
-    private LLNode tail = null;
-    private int size=0;
+    
+    private static class LLNode<E>{
+        LLNode<E> next;
+        E data;
 
-    private static class LLNode<T>{
-        LLNode next;
-        T data;
-        LLNode(T data){
+        LLNode(E data){
             this.data = data;
-            next =null;
+            next = null;
         }
     }
+ 
+    //To check if the list is empty
+    public boolean isEmpty(){
+        return head == null;
+    }
 
-    public boolean isEmpty() { return head==null;}
-
-    public int size() {
+    //To return the size of the list
+    public int size(){
         return size;
     }
-    public T getheadData() { return (T) head.data;}
-    public T getTailData() { return (T) tail.data;}
 
+    //To return the head of the list
+    public T getHeadData(){
+        return (T) head.data;
+    }
+
+    //To return the tail of the list
+    public T getTailData(){
+        return (T) tail.data;
+    }
+
+    // Adds the specified data as a new node at the end of the linked list.
     public void addLast(T data){
-        LLNode newest = new LLNode();
+        LLNode<T> newest = new LLNode<>(data);
         if(isEmpty()) head = tail = newest;
         else{
             tail.next = newest;
@@ -34,11 +46,14 @@ public class SinglyLinkedList<T>{
         size++;
     }
 
-    public T removeLast(){
-        if(isEmpty())
-            throw new RuntimeException("Error : List is Empty");
+    
+    // Removes and returns the last element from the linked list.
+    public T removelast(){
+        if(isEmpty()){
+            throw new RuntimeException("Error: List empty");
+        }
         T tail_data = (T) tail.data;
-        LLNode tail_prev = head;
+        LLNode<T> tail_prev = head;
         while(tail_prev.next != tail){
             tail_prev = tail_prev.next;
         }
@@ -48,9 +63,11 @@ public class SinglyLinkedList<T>{
         return tail_data;
     }
 
+    // Removes and returns the first element from the linked list; throws an exception if empty.
     public T removeFirst(){
-        if(isEmpty())
-            throw new RuntimeException("Error : List is empty");
+        if(isEmpty()){
+            throw new RuntimeException("Error: List empty");
+        }
         T head_data = (T) head.data;
         --size;
         head = head.next;

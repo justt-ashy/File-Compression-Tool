@@ -1,37 +1,34 @@
-package com.example.File_compression_tool.huffman;
+//Represents a node in Huffman tree, storing a character,its frequency and child nodes
+public class Node implements Comparable<Node>{
+    Node left;
+    Node right;
+    char character;
+    int frequency = 0;
 
-public class Node implements Comparable<Node>{      //comparable means that the node is comparable to another nodes
-    Node left;        // left child of Huffman Tree
-    Node right;       // right child of Huffman Tree
-    char character;   //character that will be stored
-    int frequency;    //frequency of the character
-
-    //Constructor
-    Node(final Node left, final Node right, final char character, final int frequency){
+    //constructs a node with given character, frequency and children
+    Node(final char character, final int frequency, final Node left, final Node right){
         this.character = character;
-        if(frequency<0) throw new IllegalArgumentException("Error : Frequency must be >= 0");
+        if(frequency<0) throw new IllegalArgumentException("Error: Frequency must be >= 0");
         this.frequency = frequency;
         this.left = left;
         this.right = right;
     }
 
-    //To check if node is leaf node
+    //returns true if node is a leaf (no children)
     public boolean isLeaf(){
-        return this.left == null && this.right==null;
+        return this.left == null && this.right == null;
     }
 
-    //Will decide how two nodes will be compared
-    public int compareTo(final Node that) {     //here this -> current object and that -> other object
-        final int compareFreq = Integer.compare(this.frequency, that.frequency);
-        //to ensure nodes with less freq comes first in queue
-        if(compareFreq != 0){
-            return compareFreq;
+    //compares this node to another by frequency 
+    public int compareTo(final Node that){
+        final int frequencyCompare = Integer.compare(this.frequency, that.frequency);
+        if(frequencyCompare !=0){
+            return frequencyCompare;
         }
-        //to compare charactes to keep order stable
-        return Integer.compare(this.character,that.character);
+        return Integer.compare(this.character, that.character);
     }
 
-    //converts node to a string - mainly for debugging
+    //returns a string representation of the node
     public String toString(){
         String str = "" + character;
         return str;
