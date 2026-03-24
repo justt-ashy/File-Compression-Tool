@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🗜️ File Compression Tool (Huffman Encoding)
 
 A Java-based file compression and decompression tool built using **Huffman Coding**, supporting both **command-line execution and GUI interaction**.
@@ -153,6 +153,3 @@ B.Tech CSE | Java Backend Developer | DSA Enthusiast
 ## ⭐ Support
 
 If you found this useful, consider giving it a star ⭐
-=======
-# File-Compression-Tool
->>>>>>> 5888666985f8396d02dbfd6331036abcc1adf17b
