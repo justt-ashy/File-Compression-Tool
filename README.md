@@ -49,12 +49,12 @@ This project demonstrates strong understanding of **Data Structures, Algorithms,
 ### 🔹 Compress a File
 
 ```bash
-java -cp core HuffCompression c text.txt text.tex.thuff
+java -cp core HuffCompression c text.txt text.txt.huff
 ```
 
 * `c` → Compress mode
 * `text.txt` → Input file
-* `text.texthuff` → Output compressed file
+* `text.txt.huff` → Output compressed file
 
 ---
 
@@ -65,7 +65,7 @@ java -cp core HuffCompression d text.text.huff output.txt
 ```
 
 * `d` → Decompress mode
-* `text.texthuff` → Compressed file
+* `text.txt.huff` → Compressed file
 * `output.txt` → Restored file
 
 ---
@@ -76,7 +76,6 @@ java -cp core HuffCompression d text.text.huff output.txt
 * `EncoderGUI.java` → Graphical interface
 * `ByteNode.java / CharNode.java` → Node structures
 * `CharLinkedList.java` → Character storage
-* `Displayer.java` → Output handling
 
 ---
 
